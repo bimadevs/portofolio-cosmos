@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050314;
+  --foreground: #FFFAFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(123, 44, 191, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 80% 60%, rgba(58, 134, 255, 0.1) 0%, transparent 20%),
+    linear-gradient(to bottom, #050314, #0A1128, #240046);
+  background-attachment: fixed;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-space-neon via-space-accent to-space-pink;
+  }
+  
+  .space-border {
+    @apply border border-space-accent/30 backdrop-blur-sm bg-space-dark/30;
+  }
+  
+  .glass-panel {
+    @apply bg-space-dark/40 backdrop-blur-md border border-space-accent/20 rounded-lg shadow-lg;
+  }
+  
+  .neon-glow {
+    @apply shadow-[0_0_10px_rgba(58,134,255,0.5),0_0_20px_rgba(58,134,255,0.3)];
+  }
+  
+  .purple-glow {
+    @apply shadow-[0_0_10px_rgba(123,44,191,0.5),0_0_20px_rgba(123,44,191,0.3)];
+  }
+  
+  .pink-glow {
+    @apply shadow-[0_0_10px_rgba(255,72,196,0.5),0_0_20px_rgba(255,72,196,0.3)];
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.space.dark');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.space.accent');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.space.neon');
+}
