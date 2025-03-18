@@ -105,7 +105,7 @@ const Projects = () => {
               whileTap={{ scale: 0.95 }}
               tabIndex={0}
               aria-label="Tampilkan semua proyek"
-              onKeyDown={(e) => e.key === 'Enter' && setFilter(null)}
+              onKeyDown={(e: React.KeyboardEvent) => e.key === 'Enter' && setFilter(null)}
             >
               Semua
             </motion.button>
@@ -123,7 +123,7 @@ const Projects = () => {
                 whileTap={{ scale: 0.95 }}
                 tabIndex={0}
                 aria-label={`Filter proyek dengan tag ${tag}`}
-                onKeyDown={(e) => e.key === 'Enter' && setFilter(tag)}
+                onKeyDown={(e: React.KeyboardEvent) => e.key === 'Enter' && setFilter(tag)}
               >
                 {tag}
               </motion.button>
@@ -157,7 +157,7 @@ const Projects = () => {
                     className="px-6 py-2 rounded-full bg-space-accent text-white font-medium hover:bg-space-neon transition-colors duration-300"
                     tabIndex={0}
                     aria-label={`Lihat proyek ${project.title}`}
-                    onKeyDown={(e) => e.key === 'Enter' && window.open(project.link, '_blank')}
+                    onKeyDown={(e: React.KeyboardEvent) => e.key === 'Enter' && window.open(project.link, '_blank')}
                   >
                     Lihat Proyek
                   </a>
@@ -196,7 +196,7 @@ const Projects = () => {
               onClick={() => setFilter(null)}
               tabIndex={0}
               aria-label="Reset filter"
-              onKeyDown={(e) => e.key === 'Enter' && setFilter(null)}
+              onKeyDown={(e: React.KeyboardEvent) => e.key === 'Enter' && setFilter(null)}
             >
               Tampilkan Semua
             </button>
